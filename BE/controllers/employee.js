@@ -20,6 +20,11 @@ res.status(200).json({ data: employee });
 // TODO
 exports.createEmployee = async (req, res, next) => {
   console.log(req.body)
+  let index = employee.findIndex(emp => emp.id === req.body.idadd);
+  if(index==-1)
+{
+
   employee.push({id:req.body.idadd,name:req.body.nameadd})
+}
   res.status(200).json({ data: employee });
 };
